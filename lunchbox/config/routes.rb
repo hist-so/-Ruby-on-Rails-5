@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   get 'workmenu/index', as: :workmenu
+  get 'orders/yourindex', to: 'orders#yourindex' ,as: :yourindex
+  root 'workmenu#index'
 
   resources :orders
   resources :members

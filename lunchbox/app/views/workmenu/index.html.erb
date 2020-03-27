@@ -3,3 +3,9 @@
 <%= link_to '社員一覧（社員名簿）', members_path%><br>
 <%= link_to 'お弁当一覧', boxes_path %>
 
+<%= form_tag yourindex_path, method: :get do %>
+<p><strong>ようこそ</strong>
+<%= select('member', 'id', Member.all.collect{|m| [m.name, m.id]})%>さん
+<%= submit_tag 'あなたの注文状況'%>
+<% end %>
+</p>
